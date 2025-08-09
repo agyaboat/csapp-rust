@@ -29,4 +29,10 @@ fn main() {
     let as_float = f32::from_le_bytes(bytes);
     println!("As float: {}", as_float);
 }
-```
+
+
+### Sample output
+```pgsql
+As text: ABCD
+As integer: 1145258561
+As float: 2.1219957903e-38
