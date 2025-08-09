@@ -1,2 +1,2 @@
-#Information is Bit + Context
+# Information is Bit + Context
 
