@@ -2,7 +2,7 @@
 
 ## Overview
 This chapter uses the classic `"hello, world"` program to introduce the major concepts of computer systems.  
-By tracing the program’s lifetime — from writing the source code to running it and producing output — we see how **hardware and system software work together** to execute applications.
+By tracing the program's lifetime — from writing the source code to running it and producing output — we see how **hardware and system software work together** to execute applications.
 
 The chapter sets the foundation for the rest of the book:
 - Understanding the representation of information as bits and bytes.

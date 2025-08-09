@@ -11,6 +11,8 @@ by a compiler driver:
 ```bash
 $ rustc hello.rs
 ``` 
+
+The flow then goes like this:
 ```text
 [Source Code]
    │
@@ -38,3 +40,24 @@ hello.rs
    ▼
 Executable Binary (e.g., `hello`)
    - Ready to run on your system
+
+More light on this process:
+1. **Macro Expansion**: 
+   - Rust macros like `println!` are expanded into their full code before compilation.
+   - This allows for powerful code generation and metaprogramming.
+   - Any `use` statements or `mod` declarations are resolved by loading the relevant modules or crates.
+
+2. **Compilation Phase**:
+    - The compiler translates the macro-expanded Rust code into **LLVM Intermediate Representation (IR)**
+    - LLVM IR is a low-level, platform-independent representation that can be optimized and translated into target-specific assembly language.
+    - This concept is similar to C's `hello.i` -> `hello.s` step.
+
+3. **Assembly Phase**:
+    - The LLVM IR is translated into target-specific assembly code.
+    - This code is still human-readable but is closer to machine language.
+    - `rustc` uses LLVM's assembler to produce a relocatable object file (e.g., `hello.o`).
+    - This file contains binary instructions for your CPU architecture but is not yet executable.
+
+4. **Linking Phase**:
+    - If your Rust code contains functions from standard library (e.g., println! uses std::io), `rustc` invokes the system linker to merge your object files with the required standard library files, plus any external crates you used.
+    - The result is the executable binary (hello), ready to be loaded into memory and executed.
