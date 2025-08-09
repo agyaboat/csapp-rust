@@ -40,8 +40,9 @@ hello.rs
    ▼
 Executable Binary (e.g., `hello`)
    - Ready to run on your system
+```
 
-More light on this process:
+## More light on this process:
 1. **Macro Expansion**: 
    - Rust macros like `println!` are expanded into their full code before compilation.
    - This allows for powerful code generation and metaprogramming.
